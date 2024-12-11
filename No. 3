@@ -19,8 +19,8 @@
  }
  }
  class ProMan extends Employee{
- ProMan(Stringname,Stringadd,Stringmail,intmobile,floatid,intsal){
- System.out.println("--ProjectManagerSalarySlip--");
+ ProMan(String name,String add,String mail,int mobile,float id,int sal){
+ System.out.println("--Project Manager Salary Slip--");
  this.name=name;
  this.add=add;
  this.mail=mail;
@@ -29,9 +29,9 @@
  basic=sal;
  }
  }
- classAPMextendsEmployee{
- APM(Stringname,Stringadd,Stringmail,intmobile,floatid,intsal){
- System.out.println("--AssistantProjectManagerSalarySlip--");
+ class APM extends Employee{
+ APM(String name,String add,String mail,int mobile,float id,int sal){
+ System.out.println("--Assistant Project Manager Salary Slip--");
  this.name=name;
  this.add=add;
  this.mail=mail;
@@ -40,9 +40,9 @@
  basic=sal;
  }
  }
- classTeamLeadextendsEmployee{
-TeamLead(Stringname,Stringadd,Stringmail,intmobile,floatid,intsal){
- System.out.println("--TeamLeaderSalarySlip--");
+ class TeamLead extends Employee{
+TTeamLead(String name,String add,String mail,int mobile,float id,int sal){
+ System.out.println("--Team Leader Salary Slip--");
  this.name=name;
  this.add=add;
  this.mail=mail;
@@ -51,9 +51,9 @@ TeamLead(Stringname,Stringadd,Stringmail,intmobile,floatid,intsal){
  basic=sal;
  }
  }
- classprogrammerextendsEmployee{
- programmer(Stringname,Stringadd,Stringmail,intmobile,floatid,intsal){
- System.out.println("--ProgrammerSalarySlip--");
+ class programmer extends Employee{
+ programmer(String name,String add,String mail,int mobile,float id,int sal){
+ System.out.println("--Programmer Salary Slip--");
  this.name=name;
  this.add=add;
  this.mail=mail;
@@ -62,15 +62,15 @@ TeamLead(Stringname,Stringadd,Stringmail,intmobile,floatid,intsal){
  basic=sal;
  }
  }
- classInheritance{
- publicstaticvoidmain(String[]args){
- ProManp=newProMan("AmanKale","Pune","asd@gmail.com",1234567891,101,60000);
+ class Inheritance{
+ public static void main(String[]args){
+ ProMan p=new ProMan("Aman Kale","Pune","asd@gmail.com",1234567891,101,60000);
  p.salary();
- APMa=newAPM("AmarDate","Pune","ertd@gmail.com",321456987,102,50000);
+ APM a=new APM("Amar Date","Pune","ertd@gmail.com",321456987,102,50000);
  a.salary();
- TeamLeadt=newTeamLead("RamRane","Mumbai","trya23@gmail.com",456789123,104,45000);
+ TeamLead t=new TeamLead("Ram Rane","Mumbai","trya23@gmail.com",456789123,104,45000);
  t.salary();
- programmerr=newprogrammer("RadhaMane","Mumbai","yugfc67@gmail.com",894561236,104,55000);
+ programmer r=new programmer("Radha Mane","Mumbai","yugfc67@gmail.com",894561236,104,55000);
  r.salary();
  }
  }
