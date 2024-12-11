@@ -1,0 +1,122 @@
+ importjava.util.Scanner;
+ public class Main{
+ public static void main(String[]args){
+ Book b=new Book();
+ Magazine m=new Magazine();
+ Publicationp=new Publication();
+ Scanner sc=new Scanner(System.in);
+ while(true){
+ System.out.println("Enter");
+ System.out.println("1.Order Book");
+ System.out.println("2.Order Magazine");
+ System.out.println("3.Total Book Sell");
+ System.out.println("4.Total Magazine Sell");
+ System.out.println("5.Total Publication Sell");
+ System.out.println("6.Exit\n");
+ System.out.print("Enter Your Choice:");
+ int choice=sc.nextInt();
+ System.out.print("\n");
+ switch(choice){
+ case1:
+ b.getBookData();
+ b.saleCopy();
+ break;
+ case2:
+ m.getData();
+ m.saleCopy();
+ break;
+ case3:
+ b.totalBookSell();
+ break;
+ case4:
+ m.totalMagSell();
+ break;
+ case5:
+ p.saleCopy();
+ break;
+ case6:
+System.out.println("ExitingTheProgram..");
+ System.exit(0);
+ default:
+ System.out.println("PleaseEnterValidInput..");
+ }
+ }
+ }
+
+
+ publicclassBookextendsPublication{
+ Stringauthor;
+ publicdoublebookSell;
+ publicstaticdoubletotalBookSell;
+ publicScannersc=newScanner(System.in);
+ voidgetAuthor(){
+ System.out.print("EnterAuthor'sName:");
+ author=sc.nextLine();
+ }
+ voidgetBookData(){
+ getData();
+ getAuthor();
+ }
+ voidorderCopies(){
+ System.out.print("OrderCopies:");
+ intnewCopies=sc.nextInt();
+ this.copies=newCopies+this.copies;
+ }
+ @Override
+ voidsaleCopy(){
+ bookSell=(this.copies*this.price);
+ Book.totalBookSell+=bookSell;
+ Publication.totalPrice+=totalBookSell;
+ System.out.print("\n");
+ System.out.println("OrderedBook:"+this.title);
+ System.out.println("TotalAmount:"+bookSell);
+ System.out.print("\n");
+ }
+ voidtotalBookSell(){
+ System.out.println("TotalBookSell:"+totalBookSell);
+ }
+ }
+
+
+ publicclassPublication{
+ Stringtitle;
+ doubleprice;
+ intcopies;
+ staticdoubletotalPrice;
+ Scannersc=newScanner(System.in);
+ voidgetData(){
+ System.out.print("EnterTitle:");
+ title=sc.nextLine();
+System.out.print("EnterPrice:");
+ price=sc.nextDouble();
+ System.out.print("EnterNumberofCopies:");
+ copies=sc.nextInt();
+ }
+ voidsaleCopy(){
+ System.out.println("\nTotalSell:"+(totalPrice));
+ }
+ voidtotalPublicationSell(){
+ System.out.println("TotalPublicationSell:"+totalPrice);
+ }
+ }
+
+ public class Magazine extends Publication{
+ int orderQty;
+ String currentIssue;
+ public double MagSell;
+ public static double totalMagSell;
+ Scanner sc=new Scanner(System.in);
+ @Override
+ void saleCopy(){
+ MagSell=(this.copies*this.price);
+ Magazine.totalMagSell+=MagSell;
+ Publication.totalPrice+=totalMagSell;
+ System.out.print("\n");
+ System.out.println("Ordered Magazine:"+this.title);
+ System.out.println("Total Amount:"+MagSell);
+ System.out.print("\n");
+ }
+ void totalMagSell(){
+ System.out.println("Total Magazine Sell:"+totalMagSell);
+ }
+ }
